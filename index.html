@@ -21,20 +21,29 @@
           <form id="search-form" class="mb-3">
             <div class="row">
               <div class="col-9">
-                <input
-                  type="search"
-                  placeholder="Type a city..."
-                  class="form-control"
-                  id="city-input"
-                  autocomplete="off"
-                />
-              </div>
-              <div class="col-3">
-                <input
-                  type="submit"
-                  value="Search"
-                  class="btn btn-primary w-100"
-                />
+                <div class="input-group">
+                  <input
+                    type="search"
+                    class="form-control"
+                    placeholder="Type a city..."
+                    aria-label="Type a city..."
+                    aria-describedby="basic-addon2"
+                    id="city-input"
+                    autocomplete="off"
+                  />
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">
+                      🔍
+                    </button>
+                    <button
+                      class="btn btn-outline-secondary"
+                      type="button"
+                      id="current-location"
+                    >
+                      📍
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </form>

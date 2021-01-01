@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  color: #878787;
+  color: #ffffff;
   font-size: 24px;
   font-weight: 100;
   line-height: 28px;
@@ -19,7 +19,7 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
-  color: #878787;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
@@ -38,6 +38,7 @@ li::first-letter {
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
+  background-image: url("https://helpx.adobe.com/content/dam/help/en/illustrator/how-to/drawing-basics/jcr_content/main-pars/image/drawing-basics-intro_900x506.jpg");
 }
 
 .overview {
@@ -72,12 +73,16 @@ li::first-letter {
   text-decoration: none;
 }
 
+#current-location:hover {
+  color: #454c54;
+}
+
 .weather-forecast {
   margin-top: 10px;
 }
 
 .weather-forecast h3 {
-  color: rgb(186, 186, 186);
+  color: #ffffff;
   font-size: 14px;
   font-weight: 400;
   text-align: center;
@@ -95,7 +100,7 @@ li::first-letter {
 
 .weather-forecast-temperature {
   text-align: center;
-  color: rgb(135, 135, 135);
+  color: #ffffff;
   font-size: 13px;
   font-weight: 400;
   height: auto;
