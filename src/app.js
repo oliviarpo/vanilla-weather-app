@@ -54,12 +54,24 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
-  if (descriptionElement == "broken clouds") {
+  console.log(response.data);
+
+  // Change background image
+  if (/rain/.test(descriptionElement.innerHTML)) {
     document.querySelector(".weather-app").style.backgroundImage =
       "url('images/rain.gif')";
+  } else if (/clear/.test(descriptionElement.innerHTML)) {
+    document.querySelector(".weather-app").style.backgroundImage =
+      "url('images/clear.gif')";
+  } else if (/cloud/.test(descriptionElement.innerHTML)) {
+    document.querySelector(".weather-app").style.backgroundImage =
+      "url('images/broken-clouds.gif')";
+  } else if (/snow/.test(descriptionElement.innerHTML)) {
+    document.querySelector(".weather-app").style.backgroundImage =
+      "url('images/snow.gif')";
   } else {
     document.querySelector(".weather-app").style.backgroundImage =
-      "url('images/lightrain.gif')";
+      "url('images/flying.gif')";
   }
 }
 
@@ -94,6 +106,7 @@ function displayDaily(response) {
   let dailyElement = document.querySelector("#daily");
   dailyElement.innerHTML = null;
   let daily = null;
+
   console.log(response.data);
 }
 
@@ -106,7 +119,7 @@ function search(city) {
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 
-  let apiUrlDaily = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrlDaily = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&units=metric&cnt=7&appid=${apiKey}`;
   axios.get(apiUrlDaily).then(displayDaily);
 }
 
