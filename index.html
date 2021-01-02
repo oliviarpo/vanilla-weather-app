@@ -10,6 +10,15 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/51088cb106.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
@@ -33,14 +42,14 @@
                   />
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="submit">
-                      🔍
+                      <i class="fas fa-search-location"></i>
                     </button>
                     <button
                       class="btn btn-outline-secondary"
                       type="button"
                       id="current-location"
                     >
-                      📍
+                      <i class="fas fa-location-arrow"></i>
                     </button>
                   </div>
                 </div>
@@ -49,6 +58,7 @@
           </form>
           <div class="overview">
             <h1 id="city"></h1>
+            <br />
             <ul>
               <li>Last updated: <span id="date"></span></li>
               <li id="description"></li>
@@ -74,7 +84,10 @@
               </ul>
             </div>
           </div>
+          <hr />
           <div class="row weather-forecast" id="forecast"></div>
+          <hr />
+          <div class="row weather-daily" id="daily"></div>
         </div>
         <small>
           <a
