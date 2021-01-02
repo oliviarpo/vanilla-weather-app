@@ -55,7 +55,11 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   if (descriptionElement == "broken clouds") {
-    document.body.style.backgroundImage = "url('rain.gif')";
+    document.querySelector(".weather-app").style.backgroundImage =
+      "url('images/rain.gif')";
+  } else {
+    document.querySelector(".weather-app").style.backgroundImage =
+      "url('images/lightrain.gif')";
   }
 }
 
@@ -85,6 +89,14 @@ function displayForecast(response) {
   }
 }
 
+// Daily forecast
+function displayDaily(response) {
+  let dailyElement = document.querySelector("#daily");
+  dailyElement.innerHTML = null;
+  let daily = null;
+  console.log(response.data);
+}
+
 // Search city API call
 function search(city) {
   let apiKey = "610edcec4f7131569ef97bf1470f78f8";
@@ -93,6 +105,9 @@ function search(city) {
 
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
+
+  let apiUrlDaily = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrlDaily).then(displayDaily);
 }
 
 // Submit city

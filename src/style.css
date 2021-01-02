@@ -38,7 +38,7 @@ li::first-letter {
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
-  background-image: url("../images/rain.gif");
+  background-image: url(../images/clear.gif) no-repeat;
   background-size: cover;
   background-position: 35%;
 }
