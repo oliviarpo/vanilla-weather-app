@@ -77,7 +77,20 @@ li::first-letter {
 
 .weather-forecast {
   margin-top: 10px;
-  background-color: rgba(49, 49, 49, 0.337);
+}
+
+.weather-forecast .col-2 {
+  background-color: #69beef4a;
+  border: 1px solid #dadde164;
+  border-radius: 2px;
+  padding: -50px;
+  transition: 300ms ease-in-out;
+}
+
+.weather-forecast .col-2:hover {
+  border: solid 1px #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 15px #dfdfdf;
 }
 
 .weather-forecast h3 {
@@ -105,4 +118,17 @@ li::first-letter {
   height: auto;
   line-height: 15px;
   white-space: nowrap;
+}
+
+.btn-outline-secondary {
+  border: 1px solid #ced4da;
+  color: #ced4da;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #e93f33;
+}
+
+.reference {
+  text-align: right;
 }
