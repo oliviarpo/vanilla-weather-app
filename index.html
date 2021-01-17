@@ -54,17 +54,21 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
-                <li><span id="date"></span></li>
-                <li><span id="todayDate"></span></li>
-              </div>
             </div>
           </form>
-          <div class="overview">
-            <h1 id="city"></h1>
-            <ul>
-              <li id="description"></li>
-            </ul>
+          <div class="row">
+            <div class="col-6">
+              <div class="overview">
+                <h1 id="city"></h1>
+                <ul>
+                  <li id="description"></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-6 text-right">
+              <span id="date"></span>,
+              <span id="todayDate"></span>
+            </div>
           </div>
           <div class="row">
             <div class="col-6">
@@ -79,11 +83,9 @@
                 </div>
               </div>
             </div>
-            <div class="col-6">
-              <ul>
-                <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"></span> km/h</li>
-              </ul>
+            <div class="col-6 text-right" id="conditions">
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
             </div>
           </div>
           <hr />

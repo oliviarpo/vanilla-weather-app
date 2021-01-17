@@ -18,7 +18,7 @@ ul {
 li {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 5px;
   color: rgb(33, 33, 33);
   font-size: 16px;
   font-weight: 100;
@@ -27,6 +27,14 @@ li {
 
 li::first-letter {
   text-transform: capitalize;
+}
+
+table {
+  margin: 0 auto;
+}
+
+hr {
+  margin: 5px;
 }
 
 .weather-app-wrapper {
@@ -139,11 +147,19 @@ li::first-letter {
   background-color: #e93f33;
 }
 
+.min {
+  color: grey;
+}
+
 .logo {
   height: 24px;
 }
 
+#conditions {
+  float: right;
+}
+
 #slimjim {
   float: right;
-  height: 20px;
+  height: 18px;
 }

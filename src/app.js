@@ -129,11 +129,13 @@ function displayForecast(response) {
                 alt=""
               />
               <div class="weather-forecast-temperature">
-                <strong>${Math.round(
+              <span class="max">
+                ${Math.round(
                   forecast.main.temp_max
-                )}°</strong> ${Math.round(forecast.main.temp_min)}°
-              </div>
-              
+                )}°</span>  <span class="min">${Math.round(
+      forecast.main.temp_min
+    )}°</span>
+              </div>   
             </div>
             </div>`;
   }
@@ -160,6 +162,7 @@ function handleSubmit(event) {
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
