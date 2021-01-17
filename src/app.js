@@ -1,20 +1,55 @@
 // Current day and time
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+let months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Agu",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+function nth(d) {
+  if (d > 3 && d < 21) return "th";
+  switch (d % 10) {
+    case 1:
+      return "st";
+    case 2:
+      return "nd";
+    case 3:
+      return "rd";
+    default:
+      return "th";
+  }
+}
 
 function formatDate(timestamp) {
   let date = new Date(timestamp);
 
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
   let day = days[date.getDay()];
-  return `${day} ${formatHours(timestamp)}`;
+  return `${formatHours(timestamp)}`;
 }
+
+document.querySelector("#todayDate").innerHTML = `${
+  days[new Date().getDay()]
+} ${new Date().getDate()}${nth(new Date().getDate())} ${
+  months[new Date().getMonth()]
+}`;
 
 // Current time
 function formatHours(timestamp) {
@@ -79,11 +114,13 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
   let forecast = null;
+  console.log(response.data);
 
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
-    forecastElement.innerHTML += `<div class="col-2">
-             
+    forecastElement.innerHTML += `<div class="card">
+              <div class="card-body">
+              
               <h3>${formatHours(forecast.dt * 1000)}</h3>
               <img
                 src="http://openweathermap.org/img/wn/${
@@ -97,6 +134,7 @@ function displayForecast(response) {
                 )}°</strong> ${Math.round(forecast.main.temp_min)}°
               </div>
               
+            </div>
             </div>`;
   }
 }

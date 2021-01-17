@@ -77,17 +77,27 @@ li::first-letter {
 
 .weather-forecast {
   margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
-.weather-forecast .col-2 {
+.weather-forecast .card {
+  position: relative;
+
+  margin: 0 15px;
   background-color: #69beef4a;
   border: 1px solid #dadde164;
   border-radius: 2px;
-  padding: -50px;
+
   transition: 300ms ease-in-out;
 }
 
-.weather-forecast .col-2:hover {
+.weather-forecast .card-body {
+  padding: 5px;
+}
+
+.weather-forecast .card:hover {
   border: solid 1px #ffffff;
   border-radius: 5px;
   box-shadow: 0 0 15px #dfdfdf;
@@ -129,3 +139,11 @@ li::first-letter {
   background-color: #e93f33;
 }
 
+.logo {
+  height: 24px;
+}
+
+#slimjim {
+  float: right;
+  height: 20px;
+}
